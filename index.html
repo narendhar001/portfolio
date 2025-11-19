@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Narendhar Reddy | Embedded Systems Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@100..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="scanline"></div>
+        <div class="overlay"></div>
+
+        <header class="system-header">
+            <div class="status-bar">
+                <span class="status-item">SYS.STATUS: ONLINE</span>
+                <span class="status-item" id="clock">00:00:00</span>
+                <span class="status-item">MEM: 64KB OK</span>
+            </div>
+        </header>
+
+        <nav class="system-nav">
+            <button class="nav-btn active" data-target="boot">[ HOME ]</button>
+            <button class="nav-btn" data-target="about">[ SYSTEM_SPECS ]</button>
+            <button class="nav-btn" data-target="experience">[ RUNTIME_LOGS ]</button>
+            <button class="nav-btn" data-target="projects">[ MODULES ]</button>
+            <button class="nav-btn" data-target="contact">[ I/O_PORTS ]</button>
+            <button class="nav-btn" id="help-btn">[ HELP ]</button>
+        </nav>
+
+        <main class="terminal-container">
+            <section id="boot" class="section">
+                <div class="content-block">
+                    <p class="contact-intro">WELCOME TO THE TERMINAL INTERFACE.</p>
+                    <p style="margin-bottom: 1rem;">USE THE MENU BUTTONS ABOVE OR TYPE COMMANDS BELOW:</p>
+                    <ul class="log-details">
+                        <li>> <strong>home</strong> - Return to boot screen</li>
+                        <li>> <strong>about</strong> - View system specs</li>
+                        <li>> <strong>exp</strong> - View runtime logs</li>
+                        <li>> <strong>projects</strong> - View loaded modules</li>
+                        <li>> <strong>contact</strong> - Open I/O ports</li>
+                        <li>> <strong>help</strong> - Show detailed help modal</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="about" class="section hidden">
+                <h3 class="section-title">> SYSTEM_SPECS (ABOUT)</h3>
+                <div class="content-block">
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <span class="label">ARCHITECTURE:</span>
+                            <span class="value">Embedded Systems Engineer</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="label">KERNEL:</span>
+                            <span class="value">Firmware Development, RTOS, Linux</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="label">HARDWARE:</span>
+                            <span class="value">ARM Cortex-M, ESP32, STM32, PCB Design</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="label">PROTOCOLS:</span>
+                            <span class="value">I2C, SPI, UART, CAN, BLE, WiFi</span>
+                        </div>
+                    </div>
+                    <p class="bio-text">
+                        > DETECTED_BIO: Passionate engineer specializing in low-level software and hardware interaction.
+                        Optimizing performance at the register level. Building reliable IoT solutions.
+                    </p>
+                </div>
+            </section>
+
+            <section id="experience" class="section hidden">
+                <h3 class="section-title">> RUNTIME_LOGS (EXPERIENCE)</h3>
+                <div class="timeline">
+                    <!-- Experience Item 1 -->
+                    <div class="log-entry">
+                        <div class="log-header">
+                            <span class="timestamp">[2023 - PRESENT]</span>
+                            <span class="process">SENIOR_FIRMWARE_ENG</span>
+                        </div>
+                        <div class="log-content">
+                            <p class="company">@ TECH_CORP_SOLUTIONS</p>
+                            <ul class="log-details">
+                                <li>> Architected OTA update mechanism for IoT fleet.</li>
+                                <li>> Reduced power consumption by 40% via deep sleep optimization.</li>
+                                <li>> Ported legacy bare-metal code to FreeRTOS.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 2 -->
+                    <div class="log-entry">
+                        <div class="log-header">
+                            <span class="timestamp">[2021 - 2023]</span>
+                            <span class="process">EMBEDDED_DEV</span>
+                        </div>
+                        <div class="log-content">
+                            <p class="company">@ INNOVATE_SYSTEMS</p>
+                            <ul class="log-details">
+                                <li>> Developed drivers for custom sensor peripherals.</li>
+                                <li>> Designed 4-layer PCBs for industrial controllers.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="section hidden">
+                <h3 class="section-title">> LOADED_MODULES (PROJECTS)</h3>
+                <div class="modules-grid">
+                    <!-- Project 1 -->
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-id">MOD_01</span>
+                            <span class="module-status">ACTIVE</span>
+                        </div>
+                        <h4>SMART_HOME_HUB</h4>
+                        <p class="module-desc">Centralized IoT gateway supporting Zigbee and Thread.</p>
+                        <div class="tech-stack">
+                            <span>C++</span>
+                            <span>ESP32</span>
+                            <span>MQTT</span>
+                        </div>
+                        <a href="#" class="exec-link">[ EXECUTE ]</a>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-id">MOD_02</span>
+                            <span class="module-status">STABLE</span>
+                        </div>
+                        <h4>AUTONOMOUS_ROVER</h4>
+                        <p class="module-desc">Obstacle avoidance robot using LIDAR and SLAM.</p>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>Raspberry Pi</span>
+                            <span>ROS2</span>
+                        </div>
+                        <a href="#" class="exec-link">[ EXECUTE ]</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section hidden">
+                <h3 class="section-title">> I/O_PORTS (CONTACT)</h3>
+                <div class="content-block">
+                    <p class="contact-intro">> INITIATE_COMMUNICATION_PROTOCOL:</p>
+                    <form class="contact-form" onsubmit="event.preventDefault();">
+                        <div class="form-group">
+                            <label for="sender">> SENDER_ID (NAME):</label>
+                            <input type="text" id="sender" placeholder="_" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">> RETURN_ADDRESS (EMAIL):</label>
+                            <input type="email" id="email" placeholder="_" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">> PAYLOAD (MESSAGE):</label>
+                            <textarea id="message" rows="4" placeholder="_" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">[ TRANSMIT_DATA ]</button>
+                    </form>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/narendharreddy/" target="_blank"
+                            class="social-link">LINKEDIN_BUS</a>
+                        <a href="mailto:example@email.com" class="social-link">EMAIL_PORT</a>
+                        <a href="https://github.com" target="_blank" class="social-link">GITHUB_REPO</a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="terminal-input-area">
+                <span class="prompt">visitor@portfolio:~$</span>
+                <input type="text" id="cli-input" autocomplete="off" spellcheck="false" autofocus>
+            </div>
+        </main>
+
+        <!-- Help Modal -->
+        <div id="help-modal" class="modal hidden">
+            <div class="modal-content content-block">
+                <div class="modal-header">
+                    <h3>> SYSTEM_MANUAL</h3>
+                    <button id="close-help">[X]</button>
+                </div>
+                <div class="modal-body">
+                    <p>WELCOME TO THE TERMINAL INTERFACE.</p>
+                    <p>NAVIGATION COMMANDS:</p>
+                    <ul>
+                        <li>> home : RETURN TO BOOT SCREEN</li>
+                        <li>> about : VIEW SYSTEM SPECS</li>
+                        <li>> exp : VIEW RUNTIME LOGS</li>
+                        <li>> projects : VIEW LOADED MODULES</li>
+                        <li>> contact : OPEN I/O PORTS</li>
+                    </ul>
+                    <p>YOU CAN ALSO CLICK THE MENU BUTTONS ABOVE.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="system-footer">
+            <p>© 2025 NARENDHAR REDDY | VER 1.0.0</p>
+        </footer>
+    </div>
+    <script src="src/main.js"></script>
+</body>
+
+</html>
