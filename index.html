@@ -3,9 +3,11 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Narendhar Reddy | Embedded Systems Engineer</title>
+    <title>Narendhar Reddy | Linux Device Driver Developer</title>
+    <meta name="description"
+        content="Narendhar Reddy - Linux Device Driver Developer specializing in wireless network drivers, Wi-Fi technologies at Qualcomm">
+    <meta name="keywords" content="Linux, device drivers, wireless, Wi-Fi, kernel, Qualcomm, ARM, ath10k">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -21,9 +23,9 @@
 
         <header class="system-header">
             <div class="status-bar">
-                <span class="status-item">SYS.STATUS: ONLINE</span>
+                <span class="status-item"><span style="color: var(--term-green);">●</span> SYS.STATUS: ONLINE</span>
                 <span class="status-item" id="clock">00:00:00</span>
-                <span class="status-item">MEM: 64KB OK</span>
+                <span class="status-item">MEM: 8GB OK</span>
             </div>
         </header>
 
@@ -38,18 +40,82 @@
 
         <main class="terminal-container">
             <section id="boot" class="section">
-                <div class="content-block">
-                    <p class="contact-intro">WELCOME TO THE TERMINAL INTERFACE.</p>
-                    <p style="margin-bottom: 1rem;">USE THE MENU BUTTONS ABOVE OR TYPE COMMANDS BELOW:</p>
-                    <ul class="log-details">
-                        <li>> <strong>home</strong> - Return to boot screen</li>
-                        <li>> <strong>about</strong> - View system specs</li>
-                        <li>> <strong>exp</strong> - View runtime logs</li>
-                        <li>> <strong>projects</strong> - View loaded modules</li>
-                        <li>> <strong>contact</strong> - Open I/O ports</li>
-                        <li>> <strong>help</strong> - Show detailed help modal</li>
-                    </ul>
-                    <div style="margin-top: 2rem; text-align: center;">
+                <div class="boot-sequence">
+                    <p style="color: var(--dim-text); font-size: 0.75rem;">[ 0.000000] Linux version 5.15.0-wireless
+                        (narendhar@qualcomm-dev) (gcc version 11.2.0)</p>
+                    <p style="color: var(--dim-text); font-size: 0.75rem;">[ 0.000000] Command line: BOOT_IMAGE=/vmlinuz
+                        root=/dev/sda1 ro quiet splash</p>
+                    <p style="color: var(--dim-text); font-size: 0.75rem;">[ 0.124531] CPU: ARMv8 Processor [410fd034]
+                        revision 4 (ARMv8)</p>
+                    <p style="color: var(--dim-text); font-size: 0.75rem;">[ 0.124789] CPU: Qualcomm Snapdragon 660 (ARM
+                        Cortex-A53 @ 1.4GHz)</p>
+                    <p style="color: var(--term-green); font-size: 0.75rem;">[ 0.245123] Memory: 8192MB RAM detected,
+                        7890MB available</p>
+                    <p style="color: var(--term-green); font-size: 0.75rem;">[ 0.367891] PCI: Using configuration type 1
+                        for base access</p>
+                    <p style="color: var(--term-green); font-size: 0.75rem;">[ 0.489234] pci 0000:00:00.0: [168c:003c]
+                        Qualcomm Atheros QCA6174 802.11ac</p>
+                    <p style="color: var(--term-green); font-size: 0.75rem;">[ 0.612456] ath10k_pci 0000:01:00.0:
+                        enabling device (0000 -> 0002)</p>
+                    <p style="color: var(--term-amber); font-size: 0.75rem;">[ 0.734567] ath10k_pci: firmware:
+                        requesting ath10k/QCA6174/hw3.0/firmware-6.bin</p>
+                    <p style="color: var(--term-green); font-size: 0.75rem;">[ 0.856789] ath10k_pci: qca6174 hw3.2
+                        target 0x05030000 chip_id 0x00340aff</p>
+                    <p style="color: var(--term-green); font-size: 0.75rem;">[ 0.978901] cfg80211: Loading compiled-in
+                        X.509 certificates for regulatory database</p>
+                    <p style="color: var(--term-green); font-size: 0.75rem;">[ 1.123456] cfg80211: Loaded X.509 cert
+                        'sforshee: 00b28ddf47aef9cea7'</p>
+                    <p style="color: var(--term-amber); font-size: 0.75rem;">[ 1.367890] cfg80211: Using built-in
+                        regulatory database</p>
+                    <p style="color: var(--term-green); font-size: 0.75rem;">[ 1.489012] ath10k_pci: firmware ver
+                        10.2.4-1.0-00047 api 5 features wowlan,ignore-otp</p>
+                    <p style="color: var(--term-green); font-size: 0.75rem;">[ 1.612345] ath10k_pci: htt-ver 2.1 wmi-op
+                        5 htt-op 2 cal file max-sta 32 raw 0</p>
+                    <p style="color: var(--term-cyan); font-size: 0.75rem;">[ 1.734567] ieee80211 phy0: Atheros AR9300
+                        Rev:3 mem=0xffffc90000960000, irq=17</p>
+                    <p style="color: var(--term-green); font-size: 0.75rem;">[ 1.856789] wlan0: IEEE 802.11 device
+                        registered</p>
+                    <p style="color: var(--term-green); font-size: 0.75rem;">[ 1.978901] Wireless radio recovery
+                        framework initialized</p>
+                    <p style="color: var(--term-cyan); font-size: 0.75rem;">[ 2.123456] Portfolio system ready. Type
+                        'help' for available commands.</p>
+                    <p style="color: var(--term-green); font-size: 0.75rem;">[ 2.245678] narendhar-portfolio login:
+                        <span class="blink">_</span></p>
+                </div>
+
+                <div class="content-block hidden hero-content">
+                    <p style="color: var(--term-green); margin-bottom: 0.5rem; font-size: 0.85rem;">
+                        <span style="color: var(--dim-text);">narendhar@linux-dev</span>:<span
+                            style="color: var(--term-cyan);">~</span>$ cat /etc/motd
+                    </p>
+                    <pre style="color: var(--term-amber); margin-bottom: 1rem; font-size: 0.5rem; line-height: 1;">
+ _   _    _    ____  _____ _   _ ____  _   _    _    ____  
+| \ | |  / \  |  _ \| ____| \ | |  _ \| | | |  / \  |  _ \ 
+|  \| | / _ \ | |_) |  _| |  \| | | | | |_| | / _ \ | |_) |
+| |\  |/ ___ \|  _ <| |___| |\  | |_| |  _  |/ ___ \|  _ < 
+|_| \_/_/   \_\_| \_\_____|_| \_|____/|_| |_/_/   \_\_| \_\
+                                                             
+    LINUX DEVICE DRIVER DEVELOPER | WIRELESS SPECIALIST
+    </pre>
+                    <p style="color: var(--text-color); margin-bottom: 0.5rem; font-size: 0.8rem; line-height: 1.5;">
+                        > System Status: <span style="color: var(--term-green);">● ONLINE</span><br>
+                        > Current Role: Senior Engineer @ <span style="color: var(--term-amber);">Qualcomm
+                            Chennai</span><br>
+                        > Specialization: Wireless Network Drivers | Wi-Fi 802.11ac/be | Kernel Programming<br>
+                        > Platform: Linux 5.15.0-wireless (ARM Cortex-A53)<br>
+                        > Processes: 4 active projects | 2 companies | ∞ lines of code<br>
+                        > Load Average: 0.42, 0.38, 0.35
+                    </p>
+                    <p style="color: var(--dim-text); font-size: 0.75rem; margin-bottom: 1rem; margin-top: 1rem;">
+                        <span style="color: var(--term-cyan);">TIP:</span> Type commands in the terminal below or use
+                        navigation buttons above.<br>
+                        Available: <span style="color: var(--term-green);">help</span> |
+                        <span style="color: var(--term-green);">about</span> |
+                        <span style="color: var(--term-green);">projects</span> |
+                        <span style="color: var(--term-green);">whoami</span> |
+                        <span style="color: var(--term-green);">uname</span>
+                    </p>
+                    <div style="margin-top: 1.5rem; text-align: center;">
                         <a href="narendhar_resume.pdf" download class="submit-btn">[ DOWNLOAD_RESUME.PDF ]</a>
                     </div>
                 </div>
@@ -60,25 +126,35 @@
                 <div class="content-block">
                     <div class="specs-grid">
                         <div class="spec-item">
-                            <span class="label">ARCHITECTURE:</span>
-                            <span class="value">Embedded Systems Engineer</span>
+                            <span class="label">ROLE:</span>
+                            <span class="value">Linux Device Driver Developer</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="label">LANGUAGES:</span>
+                            <span class="value">C, C++, Python</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="label">PLATFORMS:</span>
+                            <span class="value">Linux, Windows, RTOS</span>
                         </div>
                         <div class="spec-item">
                             <span class="label">KERNEL:</span>
-                            <span class="value">Firmware Development, RTOS, Linux</span>
+                            <span class="value">Kernel Programming, Device Drivers</span>
                         </div>
                         <div class="spec-item">
-                            <span class="label">HARDWARE:</span>
-                            <span class="value">ARM Cortex-M, ESP32, STM32, PCB Design</span>
+                            <span class="label">WIRELESS:</span>
+                            <span class="value">Wi-Fi 802.11be, OpenWrt, ath10k</span>
                         </div>
                         <div class="spec-item">
-                            <span class="label">PROTOCOLS:</span>
-                            <span class="value">I2C, SPI, UART, CAN, BLE, WiFi</span>
+                            <span class="label">TOOLS:</span>
+                            <span class="value">Git, GDB, Debugging, Makefiles</span>
                         </div>
                     </div>
                     <p class="bio-text">
-                        > DETECTED_BIO: Passionate engineer specializing in low-level software and hardware interaction.
-                        Optimizing performance at the register level. Building reliable IoT solutions.
+                        > PROFILE: Versatile and motivated Linux Device Driver Developer specializing in wireless
+                        network drivers and Wi-Fi technologies. Currently working at Qualcomm Chennai on ARM-based SoC
+                        wireless drivers. Passionate about continuous learning and contributing to open-source projects
+                        in the wireless communication domain.
                     </p>
                 </div>
             </section>
@@ -86,33 +162,42 @@
             <section id="experience" class="section hidden">
                 <h3 class="section-title">> RUNTIME_LOGS (EXPERIENCE)</h3>
                 <div class="timeline">
-                    <!-- Experience Item 1 -->
                     <div class="log-entry">
                         <div class="log-header">
-                            <span class="timestamp">[2023 - PRESENT]</span>
-                            <span class="process">SENIOR_FIRMWARE_ENG</span>
+                            <span class="timestamp">[JULY 2022 - PRESENT]</span>
+                            <span class="process">SENIOR_ENGINEER</span>
                         </div>
                         <div class="log-content">
-                            <p class="company">@ TECH_CORP_SOLUTIONS</p>
+                            <p class="company">@ QUALCOMM CHENNAI</p>
                             <ul class="log-details">
-                                <li>> Architected OTA update mechanism for IoT fleet.</li>
-                                <li>> Reduced power consumption by 40% via deep sleep optimization.</li>
-                                <li>> Ported legacy bare-metal code to FreeRTOS.</li>
+                                <li>> Developed and maintained wireless network drivers for ARM-based SoCs connected to
+                                    PCI and AHB</li>
+                                <li>> Contributed to open-source wireless driver (ath)</li>
+                                <li>> Worked on Makefiles in the OpenWrt ecosystem to streamline build process</li>
+                                <li>> <strong>Wireless Radio Recovery:</strong> Developed robust recovery mechanism to
+                                    restore wireless radio functionality without rebooting</li>
+                                <li>> Enhanced system reliability and uptime by implementing efficient recovery
+                                    protocols</li>
+                                <li>> <strong>Boot Time Optimization:</strong> Achieved significant reduction in boot
+                                    time via parallel execution strategies</li>
+                                <li>> Analyzed and optimized critical paths in boot process to enhance efficiency</li>
+                                <li>> <strong>Memory Leak Debugging Framework:</strong> Designed framework to
+                                    efficiently identify and debug memory leaks in drivers</li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- Experience Item 2 -->
                     <div class="log-entry">
                         <div class="log-header">
-                            <span class="timestamp">[2021 - 2023]</span>
-                            <span class="process">EMBEDDED_DEV</span>
+                            <span class="timestamp">[2021 - 2022]</span>
+                            <span class="process">INTERN</span>
                         </div>
                         <div class="log-content">
-                            <p class="company">@ INNOVATE_SYSTEMS</p>
+                            <p class="company">@ NOKIA</p>
                             <ul class="log-details">
-                                <li>> Developed drivers for custom sensor peripherals.</li>
-                                <li>> Designed 4-layer PCBs for industrial controllers.</li>
+                                <li>> Automated validation for Ethernet protocols (PPPOE, TCP, UDP, DHCP) using Robot
+                                    Framework</li>
+                                <li>> Collaborated on test plans, reducing manual testing architecture</li>
                             </ul>
                         </div>
                     </div>
@@ -122,36 +207,67 @@
             <section id="projects" class="section hidden">
                 <h3 class="section-title">> LOADED_MODULES (PROJECTS)</h3>
                 <div class="modules-grid">
-                    <!-- Project 1 -->
                     <div class="module-card">
                         <div class="module-header">
                             <span class="module-id">MOD_01</span>
                             <span class="module-status">ACTIVE</span>
                         </div>
-                        <h4>SMART_HOME_HUB</h4>
-                        <p class="module-desc">Centralized IoT gateway supporting Zigbee and Thread.</p>
+                        <h4>WIRELESS_NETWORK_DRIVERS</h4>
+                        <p class="module-desc">ARM-based SoC wireless drivers for PCI/AHB with OpenWrt integration.</p>
                         <div class="tech-stack">
-                            <span>C++</span>
-                            <span>ESP32</span>
-                            <span>MQTT</span>
+                            <span>C</span>
+                            <span>Linux Kernel</span>
+                            <span>ARM</span>
+                            <span>PCI</span>
+                            <span>OpenWrt</span>
                         </div>
-                        <a href="#" class="exec-link">[ EXECUTE ]</a>
+                        <a href="https://github.com" target="_blank" class="exec-link">[ VIEW_SOURCE ]</a>
                     </div>
 
-                    <!-- Project 2 -->
                     <div class="module-card">
                         <div class="module-header">
                             <span class="module-id">MOD_02</span>
                             <span class="module-status">STABLE</span>
                         </div>
-                        <h4>AUTONOMOUS_ROVER</h4>
-                        <p class="module-desc">Obstacle avoidance robot using LIDAR and SLAM.</p>
+                        <h4>RADIO_RECOVERY_FRAMEWORK</h4>
+                        <p class="module-desc">Robust wireless radio recovery mechanism without system reboot.</p>
                         <div class="tech-stack">
-                            <span>Python</span>
-                            <span>Raspberry Pi</span>
-                            <span>ROS2</span>
+                            <span>C</span>
+                            <span>Kernel</span>
+                            <span>Wi-Fi</span>
+                            <span>Recovery</span>
                         </div>
-                        <a href="#" class="exec-link">[ EXECUTE ]</a>
+                        <a href="https://github.com" target="_blank" class="exec-link">[ VIEW_SOURCE ]</a>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-id">MOD_03</span>
+                            <span class="module-status">OPTIMIZED</span>
+                        </div>
+                        <h4>BOOT_OPTIMIZATION</h4>
+                        <p class="module-desc">Parallel execution strategies for significant boot time reduction.</p>
+                        <div class="tech-stack">
+                            <span>C</span>
+                            <span>Linux</span>
+                            <span>Performance</span>
+                        </div>
+                        <a href="https://github.com" target="_blank" class="exec-link">[ VIEW_SOURCE ]</a>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-header">
+                            <span class="module-id">MOD_04</span>
+                            <span class="module-status">DEBUGGING</span>
+                        </div>
+                        <h4>MEMORY_LEAK_DEBUGGER</h4>
+                        <p class="module-desc">Framework for efficient memory leak identification in drivers.</p>
+                        <div class="tech-stack">
+                            <span>C</span>
+                            <span>Debugging</span>
+                            <span>Memory</span>
+                        </div>
+                        <a href="https://github.com" target="_blank" class="exec-link">[ VIEW_SOURCE ]</a>
                     </div>
                 </div>
             </section>
@@ -178,42 +294,122 @@
                     <div class="social-links">
                         <a href="https://linkedin.com/in/narendharreddy/" target="_blank"
                             class="social-link">LINKEDIN_BUS</a>
-                        <a href="mailto:example@email.com" class="social-link">EMAIL_PORT</a>
+                        <a href="mailto:narendharreddygangavaram@gmail.com" class="social-link">EMAIL_PORT</a>
                         <a href="https://github.com" target="_blank" class="social-link">GITHUB_REPO</a>
                     </div>
                 </div>
             </section>
 
             <div class="terminal-input-area">
-                <span class="prompt">visitor@portfolio:~$</span>
+                <span class="prompt">visitor@narendhar-portfolio:~$</span>
                 <input type="text" id="cli-input" autocomplete="off" spellcheck="false" autofocus>
             </div>
         </main>
 
-        <!-- Help Modal -->
         <div id="help-modal" class="modal hidden">
             <div class="modal-content content-block">
                 <div class="modal-header">
-                    <h3>> SYSTEM_MANUAL</h3>
-                    <button id="close-help">[X]</button>
+                    <h3>> MAN PORTFOLIO(1)</h3>
+                    <button id="close-help">[ESC]</button>
                 </div>
                 <div class="modal-body">
-                    <p>WELCOME TO THE TERMINAL INTERFACE.</p>
-                    <p>NAVIGATION COMMANDS:</p>
-                    <ul>
-                        <li>> home : RETURN TO BOOT SCREEN</li>
-                        <li>> about : VIEW SYSTEM SPECS</li>
-                        <li>> exp : VIEW RUNTIME LOGS</li>
-                        <li>> projects : VIEW LOADED MODULES</li>
-                        <li>> contact : OPEN I/O PORTS</li>
+                    <p style="color: var(--term-amber); margin-bottom: 1rem;">NAME</p>
+                    <p style="margin-left: 2rem; margin-bottom: 1rem;">portfolio - Interactive Linux-style portfolio
+                        interface</p>
+
+                    <p style="color: var(--term-amber); margin-bottom: 1rem;">SYNOPSIS</p>
+                    <p style="margin-left: 2rem; margin-bottom: 1rem; font-family: monospace;">
+                        <span style="color: var(--term-green);">visitor@narendhar-portfolio:~$</span> [COMMAND]
+                    </p>
+
+                    <p style="color: var(--term-amber); margin-bottom: 1rem;">DESCRIPTION</p>
+                    <p style="margin-left: 2rem; margin-bottom: 1rem;">
+                        Terminal-style interface showcasing Narendhar Reddy's expertise in Linux device driver
+                        development, wireless technologies, and kernel programming.
+                    </p>
+
+                    <p style="color: var(--term-amber); margin-bottom: 1rem;">COMMANDS</p>
+                    <ul style="margin-left: 2rem; list-style: none;">
+                        <li style="margin-bottom: 0.5rem;">
+                            <span style="color: var(--term-green); font-weight: bold;">home, boot</span>
+                            <span style="color: var(--dim-text);"> - Return to boot screen</span>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <span style="color: var(--term-green); font-weight: bold;">about, specs</span>
+                            <span style="color: var(--dim-text);"> - Display system specifications</span>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <span style="color: var(--term-green); font-weight: bold;">exp, experience, logs</span>
+                            <span style="color: var(--dim-text);"> - View work history</span>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <span style="color: var(--term-green); font-weight: bold;">projects, modules, lsmod</span>
+                            <span style="color: var(--dim-text);"> - List project modules</span>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <span style="color: var(--term-green); font-weight: bold;">contact, ports</span>
+                            <span style="color: var(--dim-text);"> - Open communication ports</span>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <span style="color: var(--term-green); font-weight: bold;">help, man</span>
+                            <span style="color: var(--dim-text);"> - Display this manual</span>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <span style="color: var(--term-green); font-weight: bold;">whoami, uname, uptime, ps,
+                                dmesg</span>
+                            <span style="color: var(--dim-text);"> - System info commands</span>
+                        </li>
                     </ul>
-                    <p>YOU CAN ALSO CLICK THE MENU BUTTONS ABOVE.</p>
+
+                    <p style="color: var(--term-amber); margin-bottom: 1rem; margin-top: 1.5rem;">SYSTEM INFO</p>
+                    <div style="margin-left: 2rem; font-family: monospace; font-size: 0.85rem;">
+                        <p style="margin-bottom: 0.3rem;">
+                            <span style="color: var(--dim-text);">Kernel:</span>
+                            <span style="color: var(--text-color);">Linux 5.15.0-wireless</span>
+                        </p>
+                        <p style="margin-bottom: 0.3rem;">
+                            <span style="color: var(--dim-text);">Platform:</span>
+                            <span style="color: var(--text-color);">ARM Cortex-A53 (Qualcomm Snapdragon 660)</span>
+                        </p>
+                        <p style="margin-bottom: 0.3rem;">
+                            <span style="color: var(--dim-text);">Shell:</span>
+                            <span style="color: var(--text-color);">portfolio-sh v1.0.0</span>
+                        </p>
+                        <p style="margin-bottom: 0.3rem;">
+                            <span style="color: var(--dim-text);">Uptime:</span>
+                            <span style="color: var(--text-color);" id="uptime">0h 0m 0s</span>
+                        </p>
+                        <p style="margin-bottom: 0.3rem;">
+                            <span style="color: var(--dim-text);">Driver:</span>
+                            <span style="color: var(--term-green);">ath10k_pci loaded</span>
+                        </p>
+                    </div>
+
+                    <p style="color: var(--term-amber); margin-bottom: 1rem; margin-top: 1.5rem;">AUTHOR</p>
+                    <p style="margin-left: 2rem; margin-bottom: 1rem;">
+                        Narendhar Reddy &lt;narendharreddygangavaram@gmail.com&gt;<br>
+                        Senior Engineer @ Qualcomm Chennai
+                    </p>
+
+                    <p style="color: var(--term-amber); margin-bottom: 1rem;">SEE ALSO</p>
+                    <p style="margin-left: 2rem; margin-bottom: 1rem;">
+                        <a href="https://linkedin.com/in/narendharreddy/" target="_blank"
+                            style="color: var(--term-cyan); text-decoration: none;">LinkedIn</a>,
+                        <a href="narendhar_resume.pdf" download
+                            style="color: var(--term-cyan); text-decoration: none;">Resume(PDF)</a>,
+                        <a href="https://github.com" target="_blank"
+                            style="color: var(--term-cyan); text-decoration: none;">GitHub</a>
+                    </p>
+
+                    <p style="margin-top: 2rem; text-align: right; color: var(--dim-text); font-size: 0.8rem;">
+                        Linux Portfolio Manual v1.0.0 - November 2025
+                    </p>
                 </div>
             </div>
         </div>
 
         <footer class="system-footer">
-            <p>© 2025 NARENDHAR REDDY | VER 1.0.0</p>
+            <p>© 2025 NARENDHAR REDDY | LINUX DEVICE DRIVER DEVELOPER | VER 1.0.0</p>
         </footer>
     </div>
     <script src="src/main.js"></script>
