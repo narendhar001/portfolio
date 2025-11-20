@@ -11,6 +11,22 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
+// Uptime calculator
+const startTime = new Date();
+function updateUptime() {
+    const now = new Date();
+    const diff = Math.floor((now - startTime) / 1000);
+    const hours = Math.floor(diff / 3600);
+    const minutes = Math.floor((diff % 3600) / 60);
+    const seconds = diff % 60;
+    const uptimeEl = document.getElementById('uptime');
+    if (uptimeEl) {
+        uptimeEl.textContent = `${hours}h ${minutes}m ${seconds}s`;
+    }
+}
+
+setInterval(updateUptime, 1000);
+
 // Navigation & CLI Logic
 document.addEventListener('DOMContentLoaded', () => {
     const bootSequence = document.querySelector('.boot-sequence');
@@ -132,6 +148,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close modal on outside click
     window.addEventListener('click', (e) => {
         if (e.target === helpModal) {
+            toggleHelp();
+        }
+    });
+
+    // Close modal on ESC key
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && helpModal && !helpModal.classList.contains('hidden')) {
             toggleHelp();
         }
     });
